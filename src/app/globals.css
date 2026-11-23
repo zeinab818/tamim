@@ -1,26 +1,46 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
+@theme {
+  --font-tamim: "Reem Kufi", sans-serif;
+}
+
+.font-tamim {
+  font-family: var(--font-tamim);
+  font-weight: 500;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ivory: #F8F5EF;
+  --cream: #F0EBE1;
+  --blue: #71899B;
+  --gold: #C6A66B;
+  --text: #665C50;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes royalFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes royalShimmer {
+  0%, 100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.royal-float {
+  animation: royalFloat 4s ease-in-out infinite;
+}
+
+.royal-shimmer {
+  animation: royalShimmer 2.5s ease-in-out infinite;
 }
